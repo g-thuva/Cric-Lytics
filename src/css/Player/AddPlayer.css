@@ -374,6 +374,49 @@ input:-webkit-autofill:active {
   border-bottom-color: rgb(254, 132, 111)!important;
   
 }
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  background-image: linear-gradient(to right, #565aa2,#042179);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 1px 13px !important;
+  cursor: pointer;
+  font-weight: bold;
+  width: 150px !important;
+  gap: 10px ;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: 280px;
+ 
+  }
   
+  .back-button:hover {
+    background-color: #061e4d !important;
+  }
+  
+  
+@media (max-width:1024px) {
+  .back-button {
+    width: 100%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    margin-left: auto;
+  margin-right: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    font-size: 0.8rem; /* Even smaller font size for very small screens */
+    padding: 6px 12px; /* Adjust padding for very small screens */
+    min-width: 120px; /* Reduce minimum width */
+   
+  }
+}
 
   

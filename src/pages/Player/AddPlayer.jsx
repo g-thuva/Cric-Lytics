@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../../css/Player/AddPlayer.css';
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft ,FaEdit, FaTrash } from "react-icons/fa";
 
 const AddPlayer = ({ onAddPlayer }) => {
   const [players, setPlayers] = useState([
@@ -263,6 +264,11 @@ const AddPlayer = ({ onAddPlayer }) => {
 
   return (
     <div className="add_match_data">
+       <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 20px' }}></div>
+      <button className="back-button" onClick={() => navigate("/view_all_players")}>
+        <FaArrowLeft />Back 
+        </button>
+      
       <p>Add Player</p>
       <main id="main" className="container">
         <div id="form-container">
@@ -562,7 +568,3 @@ const AddPlayer = ({ onAddPlayer }) => {
 }
 
 export default AddPlayer
-
-
-
-

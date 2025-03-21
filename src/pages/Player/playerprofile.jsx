@@ -259,7 +259,7 @@ const PlayerProfile = () => {
         <FaArrowLeft />Back to Players
         </button>
         <h1>{player.name}'s Profile</h1>
-
+        
  
         <div className="profile-actions">
           {isEditing ? (
@@ -293,7 +293,7 @@ const PlayerProfile = () => {
              <FaTrash /> Delete Player
             </button>
           )}
-        </div> */}
+        </div> */}   
       </div>
 
       <div className="profile-tabs">
@@ -572,4 +572,3 @@ const PlayerProfile = () => {
 }
 
 export default PlayerProfile
-

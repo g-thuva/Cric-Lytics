@@ -10,6 +10,8 @@ import Add_match_data from "./pages/add_match_data";
 import AddPlayer from "./pages/Player/AddPlayer";
 import ViewAllPlayers from "./pages/Player/viewallplayer";
 import PlayerProfile from "./pages/Player/playerprofile";
+import News from "./pages/News/News";
+import NewsDetails from "./pages/News/NewsDetails";
 import "./css/style.css"; 
 import "./css/about.css";
 import "./css/profile.css";
@@ -31,6 +33,8 @@ function App() {
           <Route path="/add_player" element={<AddPlayer />} />
           <Route path="/view_all_players" element={<ViewAllPlayers/>} />
           <Route path="/player/:playerId" element={<PlayerProfile />} />
+          <Route path="/news" element={<News/>} />
+          <Route path="/news_details/:id" element={<NewsDetails/>} />
         </Routes>
         <Footer />
       </div>

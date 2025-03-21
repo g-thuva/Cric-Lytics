@@ -15,7 +15,7 @@ const ViewAllPlayers = (allPlayers) => {// Accept allPlayers
 
   // Mock data - in a real app, this would come from an API
   useEffect(() => {
-    const mockPlayers = [
+    const mockPlayers = [  
       {
         id: 1,
         name: "Virat Kohli",

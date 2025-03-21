@@ -91,6 +91,7 @@ h1 {
     border-bottom: none;
     background-color: #ffffff7a;
     color: #ffffff;
+    outline: none;
 }
 
 .role-filter option {
@@ -161,6 +162,7 @@ h1 {
 
 .add-player-button:hover {
   background-color: #1d1b95;
+  color: #a19e9e;
 }
 
 .add-player-button::before {
@@ -229,7 +231,7 @@ tr.injured {
 }
 
 .view-profile-button {
-  background-color: #0a40b3;
+  background-color: #222286;
   color: white;
   border: none;
   border-radius: 4px;
@@ -239,7 +241,7 @@ tr.injured {
 }
 
 .view-profile-button:hover {
-  background-color: #1d4ed8;
+  background-color: #2222867e;
 }
 
 /* Star Rating Styles */
