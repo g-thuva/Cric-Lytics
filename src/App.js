@@ -12,6 +12,9 @@ import ViewAllPlayers from "./pages/Player/viewallplayer";
 import PlayerProfile from "./pages/Player/playerprofile";
 import News from "./pages/News/News";
 import NewsDetails from "./pages/News/NewsDetails";
+import Moment from "./pages/Moment/Moment";
+import MomentDetails from "./pages/Moment/MomentDetails";
+
 import "./css/style.css"; 
 import "./css/about.css";
 import "./css/profile.css";
@@ -35,6 +38,9 @@ function App() {
           <Route path="/player/:playerId" element={<PlayerProfile />} />
           <Route path="/news" element={<News/>} />
           <Route path="/news_details/:id" element={<NewsDetails/>} />
+          <Route path="/moments" element={<Moment/>}/>
+          <Route path="/moment-details/:id" element={<MomentDetails/>} />
+        
         </Routes>
         <Footer />
       </div>

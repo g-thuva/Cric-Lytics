@@ -2,9 +2,10 @@
 
 import { useState ,useEffect} from "react"
 import { commonNews, socialNews, playNews, popularNews } from "./constants"
-import { Link } from "react-router-dom"
+import { Link , useNavigate } from "react-router-dom"
 import '../../css/News/News.css';
-import { MoreHorizontal } from "lucide-react" 
+import { MoreHorizontal ,Plus} from "lucide-react" 
+
 
 const News = () => {
   const [activeTab, setActiveTab] = useState("all")
@@ -12,6 +13,7 @@ const News = () => {
   const [visiblePopularNewsCount, setVisiblePopularNewsCount] = useState(5) // Initially show 5 popular news items
   const [displayedPopularNews, setDisplayedPopularNews] = useState([])
   const [screenWidth, setScreenWidth] = useState(window.innerWidth) // Track screen width
+  const navigate = useNavigate();
 
 
     // Update screen width on resize
@@ -98,11 +100,19 @@ const News = () => {
     console.log("Total popular news:", popularNews.length)
     setVisiblePopularNewsCount((prevCount) => prevCount + (screenWidth < 768 ? 2 : 5))
   }
+  const handleAddNews = () => {
+    navigate('/#');  // add add news form path
+  }
 
   return (
+
+    <div className="news-page-container">
+        <button className="add-button" onClick={handleAddNews}>
+           Add News
+        </button>
+      
     <div className="news-container">
-      <div className="news-categories">
-        
+      <div className="news-categories">        
         <div className="category-buttons">
           <button
             className={`category-button ${activeTab === "all" ? "active" : ""}`}
@@ -140,28 +150,34 @@ const News = () => {
                   : "Play News"}{" "}
             
           </h2>
-          {visibleNews.map((news) => (
-            <div key={news.key} className="news-item">
-            <div className="news-item-content">
-              <div className="news-image">
-                <img src={news.imageUrl || "/placeholder.svg"} alt={news.title} />
-              </div>
-              <div className="news-text">
-                <h3>{news.title}</h3>
-                <p>{news.summary}</p>
-                <div className="meta-info">
-                  <span>Uploaded: {news.uploadDate}</span> | <span>Writer: {news.writer}</span>
-                  {news.category && <span> | Category: {news.category}</span>}
+          {visibleNews.map((news) => {
+              const linkTo = `/news_details/${news.id}?type=${news.category}`
+
+              return (
+                <div key={news.key}>
+                  <Link to={linkTo} className="news-item clickable">
+                    <div className="news-item-content">
+                      <div className="news-image">
+                        <img src={news.imageUrl || "/placeholder.svg"} alt={news.title} />
+                      </div>
+                      <div className="news-text">
+                        <h3>{news.title}</h3>
+                        <p>{news.summary}</p>
+                        <div className="meta-info">
+                          <span>Uploaded: {news.uploadDate}</span> | <span>Writer: {news.writer}</span>
+                          {news.category && <span> | Category: {news.category}</span>}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="button-container">
+                      <Link to={linkTo} className="read-more">
+                        Read More
+                      </Link>
+                    </div>
+                  </Link>
                 </div>
-                <Link
-                  to={`/news_details/${news.id}?type=${news.category}`}className="read-more"
-                >
-                  Read More
-                </Link>
-              </div>
-            </div>
-          </div>
-          ))}
+              )
+            })}
 
           {hasMoreNews && (
             <div className="see-more-container">
@@ -177,25 +193,33 @@ const News = () => {
         <h2 className="sub-title">
           Popular News 
         </h2>
-        {displayedPopularNews.map((news) => (
-          <div key={news.key} className="news-item">
-            <div className="news-item-content">
-              <div className="news-image">
-                <img src={news.imageUrl || "/placeholder.svg"} alt={news.title} />
-              </div>
-              <div className="news-text">
-                <h3>{news.title}</h3>
-                <p>{news.summary}</p>
-                <div className="meta-info">
-                  <span>Uploaded: {news.uploadDate}</span> | <span>Writer: {news.writer}</span>
-                </div>
-                <Link to={`/news_details/${news.id}?type=popular`} className="read-more">
-                  Read More
+        {displayedPopularNews.map((news) => {
+            const linkTo = `/news_details/${news.id}?type=popular`
+
+            return (
+              <div key={news.key}>
+                <Link to={linkTo} className="news-item clickable">
+                  <div className="news-item-content">
+                    <div className="news-image">
+                      <img src={news.imageUrl || "/placeholder.svg"} alt={news.title} />
+                    </div>
+                    <div className="news-text">
+                      <h3>{news.title}</h3>
+                      <p>{news.summary}</p>
+                      <div className="meta-info">
+                        <span>Uploaded: {news.uploadDate}</span> | <span>Writer: {news.writer}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="button-container">
+                    <Link to={linkTo} className="read-more">
+                      Read More
+                    </Link>
+                  </div>
                 </Link>
               </div>
-            </div>
-          </div>
-        ))}
+            )
+          })}
         {hasMorePopularNews && (
           <div className="see-more-container">
             <button onClick={loadMorePopularNews} className="see-more-button">
@@ -205,6 +229,7 @@ const News = () => {
           </div>
         )}
       </div>
+    </div>
     </div>
     
   )

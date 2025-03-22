@@ -15,7 +15,7 @@ function Header() {
             <li><a href="#Match" className="nav-link">Match</a></li>
             <li><a href="#Stats" className="nav-link">Stats</a></li>
             <li><a href="#Pitch" className="nav-link">Pitch</a></li>
-            <li><a href="#Moment" className="nav-link">Moment</a></li>
+            <li><a href="/moments" className="nav-link">Moment</a></li>
             <li><a href="/news" className="nav-link">News</a></li>
             <li><a href="/contacts" className="nav-link">Contacts</a></li>
           </ul>
