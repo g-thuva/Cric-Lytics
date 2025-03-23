@@ -49,7 +49,10 @@ const Profile = () => {
       </div>
       <h2>Some Of My Famous Quotes</h2>
       <div id="header">
-		<div id="nav"><b><a href="index.html">Overview</a> | <a href="#">Stats</a> | <a href="#">Matches</a> | <a href="#">News</a> | <a href="#">Photos</a> | <a href="#">Add Player</a> | <a href="#">Add Coach</a> | <a href="/add_match_data">Add Match Data</a> | <a href="#">Add News</a> | <a href="#">Add Moments</a> | <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<div id="nav"><b><a href="index.html">Overview</a> | <a href="#">Stats</a> | <a href="#">Matches</a> | <a href="#">News</a> | 
+    <a href="#">Photos</a> | <a href="/add_player">Add Player</a> | <a href="#">Add Coach</a> | <a href="/add_match_data">
+    Add Match Data</a> | <a href="#">Add News</a> | <a href="#">Add Moments</a> | <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    
           More
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

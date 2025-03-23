@@ -11,12 +11,12 @@ function Header() {
         <div className="menu-content">
           <ul className="menu-list flex">
             <li><a href="/#home" className="nav-link active-navlink">home</a></li>
-            <li><a href="#Player" className="nav-link">Player</a></li>
+            <li><a href="/view_all_players" className="nav-link">Player</a></li>
             <li><a href="#Match" className="nav-link">Match</a></li>
             <li><a href="#Stats" className="nav-link">Stats</a></li>
             <li><a href="#Pitch" className="nav-link">Pitch</a></li>
-            <li><a href="#Moment" className="nav-link">Moment</a></li>
-            <li><a href="#News" className="nav-link">News</a></li>
+            <li><a href="/moments" className="nav-link">Moment</a></li>
+            <li><a href="/news" className="nav-link">News</a></li>
             <li><a href="/contacts" className="nav-link">Contacts</a></li>
           </ul>
           <div className="media-icons flex">
