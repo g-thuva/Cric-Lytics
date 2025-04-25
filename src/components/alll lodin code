@@ -1,0 +1,300 @@
+App.jsx
+
+import InputField from "./components/inputfield"
+import SocialLogin from "./components/sociallogin"
+
+const App = () => {
+  return (    <div className ="login-container">
+      <h2 className ="form-title">Log in with</h2>
+    <SocialLogin />
+
+<p className ="separator"><span>or</span></p>
+
+<form action="#" className="login-form">
+<InputField type="text" placeholder="username"  icon="face" />
+
+<InputField type="email" placeholder="Emailadress"  icon="mail" />
+<InputField type="password" placeholder="password"  icon="lock" />
+
+
+
+<a href="#" className ="forgot-pass-link">Forgot Password</a>
+<button className="login-button">Login</button>
+</form>
+<p className="signup-text">Don&apos;t have an account? <a href="#">Signup now</a></p>
+    </div>
+  )
+}
+
+export default App
+
+
+
+
+2.InputField
+import { useState } from "react";
+const InputField = ({ type, placeholder, icon}) => {
+    const [isPasswordShown,setIsPasswordShown] = useState(false);
+  return (
+    <div className="input-wrapper">
+  <input type={isPasswordShown ? 'text': type}  placeholder={placeholder} className="input-field" required/>
+  <i className="material-symbols-outlined">{icon}</i>
+  {type ==="password" &&( 
+    
+    <i onClick={() => setIsPasswordShown(prevState => !prevState)} className="material-symbols-outlined eye-icon">
+        {isPasswordShown ? 'visibility':'visibility_off'}visibility_off</i>
+
+)}
+</div>
+  )
+}
+
+export default InputField;
+
+3.SocialLogin
+const SocialLogin = () => {
+  return (
+    <div className="social-login">
+    <button className="social-button">
+      <img src="1.avif" alt="google" className="social-icon" />Google
+    </button>
+    <button className="social-button">
+      <img src="2.jpg" alt="whatsapp" className="social-icon" />Whatsapp
+    </button>
+  </div>
+  )
+}
+
+export default SocialLogin;
+
+
+
+
+
+4. indexcsss
+
+
+/*import google fonts- montserract*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Montserrat", serif;
+}
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    background : #5F41e4;
+
+}
+
+#root{
+    width:100%;
+  padding:0 0.6rem;
+  
+
+}
+.login-container {
+    background :#ffffff;
+    padding:2rem 1.5rem;
+    border-radius:0.5rem;
+    max-width: 410px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0,0,0.1);
+
+}
+
+.login-container .form-title{
+    text-align: center;
+    font-size: 1.37rem;
+    font-weight: 600;
+    margin-bottom: 1.87rem;
+}
+
+
+.login-container .social-login{
+    display :flex;
+    gap: 1.31rem;
+
+}
+
+.social-login .social-button{
+    display: flex;
+    width:100%;
+    gap:0.81rem;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight: 500;
+    padding:0.75rem 0;
+    align-items:center;
+    justify-content:center;
+    border-radius: 0.31rem;
+    border: 1px solid #d5cbff;
+    background: #f9f8ff;
+    transition: 0.3s ease;
+
+
+     ;
+
+}
+
+.social-login .login-button:hover{
+    border: #f1eff9;
+    background-color: #5F41e4;
+
+
+}
+
+
+.social-login .social-button .social-icon{
+    width:23px;
+}
+
+.login-container .separator{
+    margin: 1.5rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.login-container .separator span{
+    background: #ffffff;
+    z-index: 1;
+    padding: 0 0.9rem;
+    font-size: 1.06rem;
+    font-weight: 500;
+    position: relative;
+
+}
+
+
+
+.login-container .separator::after {
+    position:absolute;
+    content:"";
+    left:0;
+    top:50%;
+    width: 100%;
+    height:1px;
+background: #bfb3f2;
+
+
+
+}
+
+.login-form .input-wrapper{
+ height: 54px;
+ margin-bottom: 1.5rem;
+ width: 100%;
+ position: relative;
+}
+
+
+.login-form .input-wrapper .input-field{
+    height: 100%;
+    width: 100%;
+    border-radius: 0.31rem;
+    border: 1px solid #bfb3f2;
+    padding: 0 1.25rem 0 3.12rem;
+    outline: none;
+    font-size: 1.06rem;
+    transition: 0.2s ease;
+    
+    }
+
+    .login-form .input-wrapper i{
+        color:#a395e0;
+        position:absolute ;
+        top:50%;
+        transform:translateY(-50%);
+      
+        transition: 0.2s ease;
+
+    }
+    .login-form .input-wrapper i:not( .eye-icon)
+{
+    pointer-events:none ;
+    left: 0.9rem;
+}
+    .login-form .input-wrapper .input-field::placeholder {
+        color: #a395e0;
+    }
+
+    .login-form .input-wrapper .input-field:focus {
+        border-color: #5F41e4;
+    }
+
+    .login-form .input-wrapper .input-field:focus ~ i:not( .eye-icon) {
+        color: #5F41e4;
+    }
+
+    .login-form .login-button{
+        width: 100%;
+        height: 54px;
+        cursor: pointer;
+        outline:none;
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.125rem;
+        background: #5F41e4;
+        margin-top: 2.19rem;
+        border-radius: 0.31rem;
+        border: none;
+        transition: 0.2 ease;
+
+
+    }
+
+    .login-form .login-button:hover{
+        background: #4320df;
+    }
+
+    .login-container .signup-text{
+        text-align: center;
+        font-weight: 500;
+        margin: 1.75rem 0 0.31rem;
+    }
+
+    .login-container a{
+
+        color: #5F41e4;
+        text-decoration:none;
+        font-weight: 500;
+    }
+
+    .login-container a:hover {
+        text-decoration: underline;
+    }
+
+    .login-form .forgot-pass-link{
+        display: block;
+        width: fit-content;
+        margin-top: -0.46rem;
+    }
+
+    .login-form .input-wrapper i.eye-icon{
+        font-size: 1.25rem;
+        cursor: pointer;
+        right: 0.9rem;
+        display: none;
+    }
+
+    .login-form .input-wrapper .input-field:valid ~ i.eye-icon{
+        display: block; 
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+    
