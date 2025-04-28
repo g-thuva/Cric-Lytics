@@ -1,0 +1,6 @@
+@cricketic_HostAddress = http://localhost:5002
+
+GET {{cricketic_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
