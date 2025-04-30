@@ -6,14 +6,12 @@ import About from "./pages/about";
 import Profile from "./pages/profile";
 import Footer from "./pages/footer";
 import Contacts from "./pages/contacts";
-import Add_match_data from "./pages/add_match_data";
-import AddPlayer from "./pages/Player/AddPlayer";
-import ViewAllPlayers from "./pages/Player/viewallplayer";
-import PlayerProfile from "./pages/Player/playerprofile";
-import News from "./pages/News/News";
-import NewsDetails from "./pages/News/NewsDetails";
-import Moment from "./pages/Moment/Moment";
-import MomentDetails from "./pages/Moment/MomentDetails";
+import Sponsorship_data from "./pages/sponsorship_data";
+import Add_socialmedia from "./pages/add_socialmedia";
+import OurTeam from "./pages/OurTeam"; 
+import OppositeTeam from "./pages/OppositeTeam"; 
+
+import { ThemeProvider } from "./pages/ThemeContext"; // ✅ IMPORT HERE
 
 import "./css/style.css"; 
 import "./css/about.css";
@@ -21,30 +19,27 @@ import "./css/profile.css";
 import "./css/contacts.css";
 import "./css/add_match_data.css";
 
-
 function App() {
   return (
-    <Router>
-      <div className="app-containerkk">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/add_match_data" element={<Add_match_data />} />
-          <Route path="/add_player" element={<AddPlayer />} />
-          <Route path="/view_all_players" element={<ViewAllPlayers/>} />
-          <Route path="/player/:playerId" element={<PlayerProfile />} />
-          <Route path="/news" element={<News/>} />
-          <Route path="/news_details/:id" element={<NewsDetails/>} />
-          <Route path="/moments" element={<Moment/>}/>
-          <Route path="/moment-details/:id" element={<MomentDetails/>} />
-        
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider> {/* ✅ WRAP WHOLE APP */}
+      <Router>
+        <div className="app-containerkk">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/sponsorship_data" element={<Sponsorship_data />} />
+            <Route path="/add_socialmedia" element={<Add_socialmedia />} />
+            <Route path="/OurTeam" element={<OurTeam />} />
+            <Route path="/OppositeTeam" element={<OppositeTeam />} />
+
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

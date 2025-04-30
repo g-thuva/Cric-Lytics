@@ -11,14 +11,10 @@ import logo1 from "./images/logo1.png";
 
 
 
-
-
-
-
-
 function home() {
+  
   return (
-   <div><main>
+   <div ><main>
   <section className="home" id="home">
     
             { <img src={homeImg2} alt="homeImg2" className="home-img" /> }
@@ -81,6 +77,13 @@ function home() {
       </div>
       <div className="menu-content">
         <div className="menu-items">
+          <div className="menu-item flex">
+          { <img src={menuImg1} alt="menuImg1" className="menu-img" /> }
+            <div className="menuItem-details">
+              <h4 className="menuItem-topic">A Team vs B Team</h4>
+              <p className="menuItem-des">Date : 2025.02.25 <br /> Time : 15.00 PM <br /> Location : bt/pt/paddiruppu school grount </p>
+            </div>
+          </div>
           <div className="menu-item flex">
           { <img src={menuImg1} alt="menuImg1" className="menu-img" /> }
             <div className="menuItem-details">
