@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"); /*import font*/
+
+/* this is orginal*/
+.matchhistory-container,
+.upcoming-matches-container {
+  margin: auto;
+  background: linear-gradient(
+    360deg,
+    rgb(245, 255, 245) 0%,
+    rgb(40, 44, 160) 100%
+  );
+  background-size: cover;
+
+  padding: 100px 50px 80px 50px;
+  width: 100vw;
+
+  min-height: 100vh; /* Ensures background covers the full screen */
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: #ffffff;
+}
+
+.search-container {
+  align-items: center;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-grow: 1; /* Allow search container to grow and take available space */
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 17px;
+  pointer-events: none; /* Prevent icon from being clickable */
+}
+
+.search-input,
+.type-filter {
+  padding: 10px;
+  border: 1px solid #868585;
+  border-radius: 13px;
+  border-width: 1.4px;
+  font-size: 15px;
+  background-color: #f3f3f534;
+  color: white;
+}
+
+.search-input {
+  opacity: 1 !important;
+  filter: none !important;
+  width: 600px;
+  padding-left: 45px !important;
+  color: #ccc;
+}
+
+.search-input::placeholder {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.type-filter {
+  min-width: 200px;
+}
+.search-input:focus,
+.type-filter:focus {
+  background-color: #ffffff3f;
+  color: #ffffff;
+}
+
+.search-input:focus {
+  background-color: #ffffff3f;
+  color: #3f3939;
+}
+
+.type-filter option {
+  color: rgb(146, 144, 144); /* Text color for options */
+  background-color: rgb(255, 255, 255); /* Background color for options */
+}
+
+/* Hover effect for options */
+.type-filter option:hover {
+  background-color: #8ca0e3 !important;
+  color: #ffffff !important;
+}
+
+/* Selected option style */
+.type-filter option:checked {
+  background-color: #8ca0e3;
+  color: white;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.controls-group {
+  /*no need*/
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 197px; /* Space between elements */
+  flex-wrap: nowrap; /* Prevent wrapping to ensure all elements stay in one line */
+}
+.match-history-btn,
+.upcoming-matches-btn,
+.add-matches-btn {
+  background-image: linear-gradient(to right, #565aa2, #042179);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 15px 13px;
+  height: 50px;
+  font-weight: bold;
+  width: 180px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-right: 30px;
+  justify-content: right !important;
+  margin-left: auto;
+  transition: all 0.3s ease-in-out;
+  font-size: 15px;
+}
+.upcoming-matches-btn:hover,
+.add-matches-btn:hover {
+  background-color: #1d1b95;
+  background-image: linear-gradient(to right, #565aa2, #042179);
+  transform: scale(1.05);
+}
+
+.add-matches-btn::before {
+  content: "+"; /* Add the + symbol */
+  margin-right: 8px; /* Space between + and text */
+  font-size: 19px; /* Adjust size of + */
+  font-weight: bold;
+}
+
+.table-container {
+  overflow-x: auto;
+  box-shadow: 0 4px 6px rgba(3, 3, 3, 0.257);
+  border-radius: 8px;
+}
+
+.matchhistory-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.matchhistory-table th,
+.matchhistory-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  color: #000000;
+  font-size: 16px !important;
+}
+
+.matchhistory-table th {
+  background-color: #f3f4f6eb;
+  font-weight: bolder;
+  color: #10318b;
+}
+
+.matchhistory-table tr:hover {
+  background-color: #f9fafb9a;
+}
+
+.status {
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status.win {
+  color: #166534;
+}
+
+.status.lost {
+  color: #b91c1c;
+}
+
+tr.win {
+  background-color: #fff1f25f;
+}
+
+.stats-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+}
+
+.view-scorecard-btn {
+  background-color: #0a40b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+
+  transition: background-color 0.2s;
+}
+
+.view-scorecard-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Responsive adjustments */
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .controls-group {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 8px; /* Reduce gap for smaller screens */
+  }
+
+  /* Ensure full width for child elements on smaller screens */
+  .search-container,
+  .type-filter,
+  .sort-container {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  /* Adjust alignment for sort buttons */
+  .sort-container {
+    margin-left: 0; /* Reset margin for stacked layout */
+    justify-content: flex-start; /* Align sort buttons to the left */
+  }
+
+  .search-input {
+    width: 100%; /* Full width for search input */
+    padding-left: 40px; /* Ensure padding for search icon */
+  }
+
+  .controls-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .matchhistory-table th,
+  .matchhistory-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+    align-content: center;
+    align-items: center;
+  }
+
+  .star {
+    font-size: 16px;
+  }
+}
+
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+  margin-bottom: -1px;
+}
+
+.team-logo {
+  width: 40px; /* Adjust size */
+  height: 40px;
+  border-radius: 50%; /* Circular logo */
+  object-fit: cover; /* Ensures good image fit */
+}
+
+.team-name {
+  color: #000000;
+}

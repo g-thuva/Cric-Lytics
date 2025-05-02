@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"); /*import font*/
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scorecard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    360deg,
+    rgb(245, 255, 245) 0%,
+    rgb(61, 64, 148) 100%
+  );
+  padding: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.scorecard-both-innings {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  /* Light grayish background */
+}
+
+.scorecard1,
+.scorecard2 {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: linear-gradient(
+    360deg,
+    rgb(245, 255, 245) 0%,
+    rgb(61, 64, 148) 100%
+  );
+  flex: 1;
+  transition: transform 1s ease, box-shadow 0.3s ease;
+
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.scorecard1:hover,
+.scorecard2:hover {
+  transform: scale(1.05); /* Slightly enlarges the card */
+
+  background: #f3f4f6eb; /* Light background change */
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: white;
+}
+
+.scorecard-table-batting,
+.scorecard-table-bowlling {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  border-spacing: 0;
+  border-left: none;
+  border-right: none;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.scorecard-table-batting th,
+.scorecard-table-bowlling th {
+  height: 45px;
+  text-align: left;
+  padding: 9px;
+  background-color: #f3f4f6eb;
+  font-weight: bolder;
+  color: #10318b;
+}
+
+.scorecard-table-batting th:first-child,
+.scorecard-table-bowlling th:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.scorecard-table-batting th:last-child,
+.scorecard-table-bowlling th:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.scorecard-table-batting td:first-child,
+.scorecard-table-bowlling td:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.scorecard-table-batting td:last-child,
+.scorecard-table-bowlling td:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.scorecard-table-batting td,
+.scorecard-table-bowlling td {
+  border-bottom: 0.1px solid #dbd6d1;
+  padding: 8px;
+  text-align: left;
+  border-left: none !important;
+  border-right: none !important;
+
+  height: 40px;
+}
+
+.extras,
+.fall-of-wickets {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f3f4f6eb;
+}
+
+.fall-of-wickets h4 {
+  margin-bottom: 5px;
+}
+
+.fall-of-wickets:hover {
+  transform: scale(1.05);
+}
+
+.extras:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .scorecard {
+    padding: 10px;
+  }
+  th,
+  td {
+    font-size: 12px;
+    padding: 7px;
+  }
+}
+
+.scorecard-table-batting tr:hover td {
+  background-color: white;
+  transition: background-color 0.4s ease-in-out;
+  border: none;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.scorecard-table-bowlling tr:hover td {
+  background-color: rgb(118, 119, 177);
+  transition: background-color 0.4s ease-in-out;
+  border-left: none;
+}
+
+.scorecard1,
+.scorecard2 {
+  overflow: hidden;
+  border: 1px solid transparent; /* Prevent border flickering */
+}
+
+.notification-box {
+  position: fixed;
+  bottom: -50px; /* Start hidden below */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f50606;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.notification-box.show {
+  bottom: 20px; /* Slide up */
+}

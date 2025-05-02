@@ -8,12 +8,27 @@ import Footer from "./pages/footer";
 import Contacts from "./pages/contacts";
 import Sponsorship_data from "./pages/sponsorship_data";
 import Add_socialmedia from "./pages/add_socialmedia";
-import OurTeam from "./pages/OurTeam"; 
-import OppositeTeam from "./pages/OppositeTeam"; 
+import OurTeam from "./pages/OurTeam";
+import OppositeTeam from "./pages/OppositeTeam";
+
+import MatchHistory from "./pages/MatchTable/MatchHistory";
+import ScoreCard from "./pages/MatchTable/ScoreCard";
+import UpcomingMatches from "./pages/MatchTable/UpcomingMatches";
+import AddNews from "./pages/NewsUpdates/AddNews";
+import MedicalForm from "./pages/Medical/MedicalForm";
+import Notification from "./pages/Notifications/Notification";
+import ViewMedicalDetails from "./pages/Notifications/ViewMedicalDetails";
+/*
+
+
+import MatchForm from "./pages/MatchTable/MatchForm";
+import MatchResults from "./pages/MatchTable/MatchFormResults";
+
+import "./App.css";*/
 
 import { ThemeProvider } from "./pages/ThemeContext"; // ✅ IMPORT HERE
 
-import "./css/style.css"; 
+import "./css/style.css";
 import "./css/about.css";
 import "./css/profile.css";
 import "./css/contacts.css";
@@ -21,7 +36,9 @@ import "./css/add_match_data.css";
 
 function App() {
   return (
-    <ThemeProvider> {/* ✅ WRAP WHOLE APP */}
+    <ThemeProvider>
+      {" "}
+      {/* ✅ WRAP WHOLE APP */}
       <Router>
         <div className="app-containerkk">
           <Header />
@@ -34,8 +51,26 @@ function App() {
             <Route path="/add_socialmedia" element={<Add_socialmedia />} />
             <Route path="/OurTeam" element={<OurTeam />} />
             <Route path="/OppositeTeam" element={<OppositeTeam />} />
+            <Route path="/match-history" element={<MatchHistory />} />
+            <Route path="/scorecard/:matchId" element={<ScoreCard />} />
+            <Route path="/upcoming-matches" element={<UpcomingMatches />} />
+            <Route path="/addnews-form" element={<AddNews />} />
+            <Route path="/medical-form" element={<MedicalForm />} />
+            <Route path="/admin-medical" element={<Notification />} />
+            <Route
+              path="/medical-details/:id"
+              element={<ViewMedicalDetails />}
+            />
 
+            {/* 
+            
+            
+            
+
+            <Route path="/match-results" element={<MatchResults />} />
+            <Route path="/match-form" element={<MatchForm />} />*/}
           </Routes>
+
           <Footer />
         </div>
       </Router>
