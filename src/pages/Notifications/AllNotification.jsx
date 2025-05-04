@@ -8,6 +8,7 @@ const Notification = () => {
   const [searchName, setSearchName] = useState("");
   const [readIds, setReadIds] = useState([]); // Track the IDs of the clicked rows
   const navigate = useNavigate();
+  const [messageFilter, setMessageFilter] = useState("All");
 
   // Load readIds from localStorage on mount to persist clicked rows
   useEffect(() => {
@@ -29,7 +30,7 @@ const Notification = () => {
     const fetchSubmissions = async () => {
       try {
         const response = await axios.get(
-          "https://localhost:7115/api/MedicalForm"
+          "http://localhost:5121/api/MedicalForm"
         );
         setSubmissions(response.data);
       } catch (error) {
@@ -50,9 +51,15 @@ const Notification = () => {
   };
 
   // Filter and search submissions based on player name
-  const filteredSubmissions = submissions.filter((sub) =>
-    sub.playerName?.toLowerCase().includes(searchName.toLowerCase())
-  );
+  const filteredSubmissions = submissions
+    .filter((sub) =>
+      sub.playerName?.toLowerCase().includes(searchName.toLowerCase())
+    )
+    .filter((sub) => {
+      if (messageFilter === "All") return true;
+      const messageType = sub.messageType || "Medical"; // Default to Medical if null
+      return messageType === messageFilter;
+    });
 
   // Format the submission date
   const formatDateTime = (datetime) => {
@@ -79,6 +86,15 @@ const Notification = () => {
           onChange={(e) => setSearchName(e.target.value)}
           className="search-input"
         />
+        <select
+          value={messageFilter}
+          onChange={(e) => setMessageFilter(e.target.value)}
+          className="filter-select"
+        >
+          <option value="All">All</option>
+          <option value="Medical">Medical</option>
+          <option value="Request">Request</option>
+        </select>
       </div>
 
       <div className="table-container">

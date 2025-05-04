@@ -16,8 +16,12 @@ import ScoreCard from "./pages/MatchTable/ScoreCard";
 import UpcomingMatches from "./pages/MatchTable/UpcomingMatches";
 import AddNews from "./pages/NewsUpdates/AddNews";
 import MedicalForm from "./pages/Medical/MedicalForm";
-import Notification from "./pages/Notifications/Notification";
+import MedicalNotification from "./pages/Notifications/MedicalNotification";
 import ViewMedicalDetails from "./pages/Notifications/ViewMedicalDetails";
+
+import AllNotification from "./pages/Notifications/AllNotification";
+/*
+
 /*
 
 
@@ -56,16 +60,14 @@ function App() {
             <Route path="/upcoming-matches" element={<UpcomingMatches />} />
             <Route path="/addnews-form" element={<AddNews />} />
             <Route path="/medical-form" element={<MedicalForm />} />
-            <Route path="/admin-medical" element={<Notification />} />
+            <Route path="/admin-medical" element={<MedicalNotification />} />
+            <Route path="/all-notification" element={<AllNotification />} />
             <Route
               path="/medical-details/:id"
               element={<ViewMedicalDetails />}
             />
 
-            {/* 
-            
-            
-            
+            {/*
 
             <Route path="/match-results" element={<MatchResults />} />
             <Route path="/match-form" element={<MatchForm />} />*/}

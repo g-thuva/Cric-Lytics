@@ -1,16 +1,16 @@
 .admin-page {
   margin: auto;
+  padding: 100px 50px 80px 50px;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(
     360deg,
     rgb(245, 255, 245) 0%,
     rgb(40, 44, 160) 100%
   );
   background-size: cover;
-  padding: 100px 50px 80px 50px;
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .admin-page h2 {
@@ -20,7 +20,54 @@
   font-size: 28px;
 }
 
-/* Table container (card) */
+/* Controls section */
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.filter-select,
+.search-input,
+.controls button,
+.sort-select {
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffffcf;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button specific */
+.controls button {
+  cursor: pointer;
+  background-image: none;
+}
+
+/* Hover and focus effects */
+.search-input:focus,
+.controls button:hover,
+.sort-select:hover,
+.sort-select:focus {
+  border-color: #10318b;
+  box-shadow: 0 0 5px rgba(16, 49, 139, 0.3);
+  outline: none;
+}
+
+/* Sort select dropdown customization */
+.sort-select {
+  width: 220px;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="none" stroke="%2310318b" stroke-width="2" d="M1 1l5 5 5-5"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px 8px;
+  cursor: pointer;
+}
+
+/* Table container */
 .table-container {
   overflow-x: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -30,12 +77,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Lift effect on hover */
 .table-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Table */
 .admin-table {
   width: 100%;
   border-collapse: collapse;
@@ -46,8 +93,8 @@
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #e5e7eb;
-  color: #000000;
   font-size: 16px;
+  color: #000000;
 }
 
 .admin-table th {
@@ -56,24 +103,22 @@
   color: #10318b;
 }
 
-/* Row hover effect */
 .admin-table tr:hover {
-  background-color: #e8efffbd;
+  background-color: #f1f1f1;
+  cursor: pointer;
   transform: scale(1.01);
   transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
 }
 
-/* Read row style */
+/* Row status styles */
 .read-row {
-  background-color: #d3ffd3; /* Light green for read rows */
-  color: #4caf50; /* Dark green text for read rows */
+  background-color: #d3ffd3;
+  color: #b78ae2;
 }
 
-/* Unread row style */
 .unread-row {
-  background-color: #ffffff; /* White background for unread rows */
-  color: #333; /* Dark text color for unread rows */
+  background-color: #ffffff;
+  color: #333;
 }
 
 .submission-row {
@@ -82,10 +127,10 @@
 }
 
 .submission-row:hover {
-  background-color: #f4f4f4; /* Light grey background on hover */
+  background-color: #e8efffbd;
 }
 
-/* Responsive */
+/* Responsive styles */
 @media (max-width: 768px) {
   .admin-page {
     padding: 80px 20px;
@@ -96,47 +141,4 @@
     padding: 8px 10px;
     font-size: 14px;
   }
-}
-
-.sort-select {
-  padding: 10px 15px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 16px;
-  width: 220px;
-  background-color: #ffffffcf;
-  color: #333;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  appearance: none; /* Removes the default OS/browsers dropdown arrow */
-  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="none" stroke="%2310318b" stroke-width="2" d="M1 1l5 5 5-5"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 12px 8px;
-  cursor: pointer;
-}
-
-.sort-select:focus {
-  outline: none;
-  border-color: #10318b;
-  box-shadow: 0 0 5px rgba(16, 49, 139, 0.4);
-}
-
-.sort-select:hover {
-  border-color: #10318b;
-}
-
-/* Light green for read rows */
-.read-row {
-  background-color: #d3ffd3;
-}
-
-/* White for unread rows */
-.unread-row {
-  background-color: #ffffff;
-}
-
-/* Optional hover effect */
-.submission-row:hover {
-  background-color: #e8efffbd;
-  cursor: pointer;
 }

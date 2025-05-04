@@ -58,6 +58,13 @@ function Header() {
                 Contacts
               </a>
             </li>
+
+            <li>
+              <a href="/all-notification" className="nav-link">
+                Notification
+              </a>
+            </li>
+
             <li>
               <button
                 onClick={() => setDarkMode((prev) => !prev)}

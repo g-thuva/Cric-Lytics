@@ -1,8 +1,8 @@
 import "../../css/MatchHistory.css";
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+
 import kandyLogo from "../images/7.jpg";
 import jaffnaLogo from "../images/1.jpeg";
 import amparaLogo from "../images/2.png";
@@ -22,134 +22,102 @@ const logoMap = {
 };
 
 const MatchHistory = () => {
-  const [match, setMatches] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(""); // serching
-  const [typeFilter, setTypeFilter] = useState(""); // type
-  const [statusFilter, setStatusFilter] = useState(""); //staus
-  const [venuFilter, setVenuFilter] = useState(""); // venu
+  const [match, setMatch] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [typeFilter, setTypeFilter] = useState("");
+  const [venuFilter, setVenuFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
 
   const navigate = useNavigate();
 
+  const handleDelete = (id) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this match?"
+    );
+    if (confirmed) {
+      const updatedMatches = match.filter((m) => m.matchId !== id);
+      setMatch(updatedMatches);
+    }
+  };
+
+  const handleReset = (id) => {
+    navigate("/OurTeam", { state: { matchId: id } });
+  };
+
   useEffect(() => {
-    const monkMatches = [
-      {
-        id: 1,
-        sno: 1,
-        date: "3rd jan",
-        team: "kandy cric",
-        status: "lost",
-        score: {
-          innings1: 254,
-          innings2: 250,
-        },
-        type: "T20",
-        venu: "Jaffna",
-      },
-
-      {
-        id: 2,
-        sno: 2,
-        date: "4th jan",
-        team: "batti cric",
-        status: "win",
-        score: {
-          innings1: 236,
-          innings2: 199,
-        },
-        type: "Test",
-        venu: "Kandy",
-      },
-
-      {
-        id: 3,
-        sno: 3,
-        date: "5th jan",
-        team: "ampara cric",
-        status: "lost",
-        score: {
-          innings1: 136,
-          innings2: 199,
-        },
-        type: "Test",
-        venu: "Kandy",
-      },
-
-      {
-        id: 4,
-        sno: 4,
-        date: "4th jan",
-        team: "batti cric",
-        status: "win",
-        score: {
-          innings1: 400,
-          innings2: 199,
-        },
-        type: "Test",
-        venu: "Batti",
-      },
-
-      {
-        id: 5,
-        sno: 5,
-        date: "4th jan",
-        team: "jaffna cric",
-        status: "win",
-        score: {
-          innings1: 236,
-          innings2: 199,
-        },
-        type: "Test",
-        venu: "Ampara",
-      },
-
-      {
-        id: 6,
-        sno: 6,
-        date: "5th jan",
-        team: "jaffna cric",
-        status: "lost",
-        score: {
-          innings1: 236,
-          innings2: 199,
-        },
-        type: "ODI",
-        venu: "Ampara",
-      },
-    ];
-
-    setMatches(monkMatches);
+    fetch("http://localhost:5121/api/MatchEntry")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch match data");
+        return res.json();
+      })
+      .then((data) => {
+        setMatch(data);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
+  // Enum mappings for display
+  const mapMatchStatus = (status) => {
+    switch (status) {
+      case 0:
+        return "Won";
+      case 1:
+        return "Lost";
+      case 2:
+        return "Draw";
+      default:
+        return "Unknown";
+    }
+  };
+
+  const mapMatchType = (type) => {
+    switch (type) {
+      case 0:
+        return "T20";
+      case 1:
+        return "Test";
+      case 2:
+        return "ODI";
+      default:
+        return "Unknown";
+    }
+  };
+
+  const mapFirstInnings = (firstInnings) => {
+    switch (firstInnings) {
+      case 0:
+        return "Batting";
+      case 1:
+        return "Bowling";
+      default:
+        return "Unknown"; // Fallback if value is unexpected
+    }
+  };
+
   const filteredMatches = match.filter((match) => {
-    const matchesSearch = match.team // search by team
+    const matchesSearch = match.oppositeTeamName
       .toLowerCase()
-      .includes(searchTerm.toLowerCase()); //search box
+      .includes(searchTerm.toLowerCase());
 
     const matchesType =
-      typeFilter === "" ||
-      match.type.toLowerCase() === typeFilter.toLowerCase(); // filtering type
-
-    const matchesVenu =
-      venuFilter === "" ||
-      match.venu.toLowerCase() === venuFilter.toLowerCase(); // filtering venu
-
+      typeFilter === "" || mapMatchType(match.matchType) === typeFilter;
+    const matchesVenu = venuFilter === "" || match.venue === venuFilter;
     const matchesStatus =
-      statusFilter === "" ||
-      match.status.toLowerCase() === statusFilter.toLowerCase();
+      statusFilter === "" || mapMatchStatus(match.matchStatus) === statusFilter;
+
     return matchesSearch && matchesType && matchesVenu && matchesStatus;
   });
-  //.sort((a, b) => a.sno - b.sno); // Sort by match number (sno)
 
   const handleScoreCard = (matchId) => {
     navigate(`/ScoreCard/${matchId}`);
   };
 
   const handleUpcomingMatches = () => {
-    navigate("/upcoming-matches"); // Match the path here
+    navigate("/upcoming-matches");
   };
 
   const handleAddMatches = () => {
-    navigate("/medical-form"); // This should route to the medical form page
+    navigate("/medical-form");
   };
 
   return (
@@ -173,13 +141,13 @@ const MatchHistory = () => {
             <FaSearch className="search-icon" />
             <input
               type="text"
-              placeholder="Search by name..."
+              placeholder="Search by team..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="search-input"
             />
 
-            <select //OPTIONS OF TYPE
+            <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
               className="type-filter"
@@ -190,7 +158,7 @@ const MatchHistory = () => {
               <option value="ODI">ODI</option>
             </select>
 
-            <select //OPTIONS OF VENU
+            <select
               value={venuFilter}
               onChange={(e) => setVenuFilter(e.target.value)}
               className="type-filter"
@@ -202,15 +170,15 @@ const MatchHistory = () => {
               <option value="Batti">Batti</option>
             </select>
 
-            <select //OPTIONS OF satus
+            <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
               className="type-filter"
             >
-              <option value="">All Staus</option>
-              <option value="win"> Win</option>
-              <option value="lost">Lost</option>
-              <option value="drow">Drow</option>
+              <option value="">All Status</option>
+              <option value="Won">Won</option>
+              <option value="Lost">Lost</option>
+              <option value="Draw">Draw</option>
             </select>
           </div>
         </div>
@@ -220,48 +188,65 @@ const MatchHistory = () => {
         <table className="matchhistory-table">
           <thead>
             <tr>
-              <th>M.No</th>
+              <th>Match Code</th>
               <th>Date</th>
               <th>Team</th>
               <th>Status</th>
               <th>Score</th>
               <th>Type</th>
-              <th>Venu</th>
+              <th>Venue</th>
               <th>Details</th>
             </tr>
           </thead>
           <tbody>
             {filteredMatches.map((match) => (
               <tr
-                key={match.id}
-                className={match.status === "win" ? "Win" : ""}
+                key={match.matchId}
+                className={
+                  mapMatchStatus(match.matchStatus) === "Won"
+                    ? "won"
+                    : mapMatchStatus(match.matchStatus) === "Lost"
+                    ? "lost"
+                    : mapMatchStatus(match.matchStatus) === "Draw"
+                    ? "draw"
+                    : ""
+                }
               >
-                <td>{match.sno}</td>
-                <td>{match.date}</td>
-                <td className="team-cell">
-                  <img
-                    src={logoMap[match.team.toLowerCase()]}
-                    alt={match.team}
-                    className="team-logo"
-                  />
-                  <span className="team-name">{match.team}</span>
+                <td>{match.matchCode}</td>
+                <td>{new Date(match.matchDate).toLocaleDateString()}</td>
+                <td>{match.oppositeTeamName}</td>
+                <td
+                  className={`status ${mapMatchStatus(
+                    match.matchStatus
+                  ).toLowerCase()}`}
+                >
+                  {mapMatchStatus(match.matchStatus)}
                 </td>
 
-                <td className={`status ${match.status.toLowerCase()}`}>
-                  {match.status}
-                </td>
+                <td>{/* Score can be added later */}</td>
+                <td>{mapMatchType(match.matchType)}</td>
+                <td>{match.venue}</td>
                 <td>
-                  {match.score.innings1} / {match.score.innings2}
-                </td>
-                <td>{match.type}</td>
-                <td>{match.venu}</td>
-                <td>
-                  <button
-                    className="view-scorecard-btn"
-                    onClick={() => handleScoreCard(match.id)}
-                  >
-                    More
-                  </button>
+                  <div className="action-buttons">
+                    <button
+                      className="view-scorecard-btn"
+                      onClick={() => handleScoreCard(match.matchId)}
+                    >
+                      More
+                    </button>
+                    <button
+                      className="reset-btn"
+                      onClick={() => handleReset(match.matchId)}
+                    >
+                      Reset
+                    </button>
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDelete(match.matchId)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -271,4 +256,5 @@ const MatchHistory = () => {
     </div>
   );
 };
+
 export default MatchHistory;

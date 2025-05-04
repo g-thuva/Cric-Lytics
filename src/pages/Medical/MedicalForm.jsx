@@ -22,7 +22,7 @@ const MedicalForm = () => {
 
     try {
       const response = await axios.post(
-        "https://localhost:7115/api/MedicalForm",
+        "http://localhost:5121/api/MedicalForm",
         formData,
         {
           headers: {
