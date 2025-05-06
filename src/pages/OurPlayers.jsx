@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const AddMatchData = () => {
+const OurPlayers = () => {
   const [selected, setSelected] = useState("");
-  const [matchType, setMatchType] = useState("");
+
+  const { matchCode } = useParams();
   const [players, setPlayers] = useState([{ id: 1 }]);
   const [playerRoles, setPlayerRoles] = useState({ 1: "Bowlers" });
   const [loading, setLoading] = useState(false);
@@ -78,6 +80,7 @@ const AddMatchData = () => {
     }
 
     const playerDetails = players.map((player) => ({
+      matchId: matchCode,
       name: e.target[`name${player.id}`].value,
       playerId: e.target[`playerid${player.id}`].value,
       role: playerRoles[player.id],
@@ -100,7 +103,10 @@ const AddMatchData = () => {
     };
 
     try {
-      await axios.post("http://localhost:5002/api/match/matchdata", fullData);
+      await axios.post(
+        "http://localhost:5121/api/Performance/player",
+        fullData
+      );
       alert("Form Submitted Successfully!");
     } catch (error) {
       alert("Error submitting form");
@@ -497,4 +503,40 @@ const AddMatchData = () => {
   );
 };
 
-export default AddMatchData;
+export default OurPlayers;
+
+{
+  /*import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+const OurPlayers = () => {
+  const location = useLocation();
+  const matchCode = location.state?.matchCode || "";
+
+  const createDefaultPlayer = () => ({
+    matchCode: matchCode,
+    playerName: "",
+    playerRole: "",
+    battingPosition: "",
+    runs: "",
+    ballsFaced: "",
+    sixers: "",
+    fours: "",
+    isOut: "",
+    outMethode: "",
+    fielder1: "",
+    fielder2: "",
+    bowler: "",
+    outOverBall: "",
+    record: "",
+    overNumber: "",
+    runsInOver: "",
+    extrasInOver: "",
+    wicketBalls: "",
+    oversBowled: "",
+    maidenOvers: "",
+    runsGiven: "",
+    wicketsTaken: "",
+  }); */
+}

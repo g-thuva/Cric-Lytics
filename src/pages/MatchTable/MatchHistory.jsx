@@ -117,7 +117,7 @@ const MatchHistory = () => {
   };
 
   const handleAddMatches = () => {
-    navigate("/medical-form");
+    navigate("/OurTeam");
   };
 
   return (

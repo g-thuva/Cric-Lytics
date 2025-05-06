@@ -198,7 +198,7 @@ body.dark .theme-toggle {
 }
 
 .heart-icon {
-  color: rgb(0, 255, 76);
+  color: red;
   font-size: 24px;
   margin-bottom: 10px;
 }

@@ -10,7 +10,7 @@ import Sponsorship_data from "./pages/sponsorship_data";
 import Add_socialmedia from "./pages/add_socialmedia";
 import OurTeam from "./pages/OurTeam";
 import OppositeTeam from "./pages/OppositeTeam";
-
+import OurPlayers from "./pages/OurPlayers";
 import MatchHistory from "./pages/MatchTable/MatchHistory";
 import ScoreCard from "./pages/MatchTable/ScoreCard";
 import UpcomingMatches from "./pages/MatchTable/UpcomingMatches";
@@ -54,7 +54,8 @@ function App() {
             <Route path="/sponsorship_data" element={<Sponsorship_data />} />
             <Route path="/add_socialmedia" element={<Add_socialmedia />} />
             <Route path="/OurTeam" element={<OurTeam />} />
-            <Route path="/OppositeTeam" element={<OppositeTeam />} />
+
+            <Route path="/OppositeTeam/:matchCode" element={<OppositeTeam />} />
             <Route path="/match-history" element={<MatchHistory />} />
             <Route path="/scorecard/:matchId" element={<ScoreCard />} />
             <Route path="/upcoming-matches" element={<UpcomingMatches />} />
@@ -62,6 +63,7 @@ function App() {
             <Route path="/medical-form" element={<MedicalForm />} />
             <Route path="/admin-medical" element={<MedicalNotification />} />
             <Route path="/all-notification" element={<AllNotification />} />
+            <Route path="/our-players/:matchCode" element={<OurPlayers />} />
             <Route
               path="/medical-details/:id"
               element={<ViewMedicalDetails />}
