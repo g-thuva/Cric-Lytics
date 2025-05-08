@@ -37,6 +37,7 @@ const OurPlayers = () => {
         "http://localhost:5121/api/MatchEntry",
         matchData
       );
+
       console.log(response.data); // <-- A
 
       const savedMatch = response.data;

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cricketic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0744a9e86415259ddf995c6487d8e205ca642147")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2883d0a43740080621852b57becac27e55453a5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("cricketic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cricketic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
