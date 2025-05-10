@@ -64,6 +64,7 @@ function App() {
             <Route path="/admin-medical" element={<MedicalNotification />} />
             <Route path="/all-notification" element={<AllNotification />} />
             <Route path="/our-players/:matchCode" element={<OurPlayers />} />
+            <Route path="/our-players" element={<OurPlayers />} />
             <Route
               path="/medical-details/:id"
               element={<ViewMedicalDetails />}
