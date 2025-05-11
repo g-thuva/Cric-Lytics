@@ -1,0 +1,6 @@
+@Cric_Lytics_HostAddress = http://localhost:5041
+
+GET {{Cric_Lytics_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

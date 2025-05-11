@@ -1,0 +1,217 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\ASP.Net\\Cric-Lytics\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\controllers\\matchhistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\controllers\\matchhistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\services\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\services\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\dtos\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\dtos\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\services\\matchhistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\services\\matchhistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\models\\matchhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\models\\matchhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\dtos\\playerstatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\dtos\\playerstatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|e:\\asp.net\\cric-lytics\\cric-lytics\\dtos\\matchhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AD358FA-7260-4055-8E9D-235C36A816CC}|Cric-Lytics\\Cric-Lytics.csproj|solutionrelative:cric-lytics\\dtos\\matchhistorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayersController.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Controllers\\PlayersController.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Controllers\\PlayersController.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Controllers\\PlayersController.cs",
+              "RelativeToolTip": "Cric-Lytics\\Controllers\\PlayersController.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAowKgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:13.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StatisticsController.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Controllers\\StatisticsController.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Controllers\\StatisticsController.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Controllers\\StatisticsController.cs",
+              "RelativeToolTip": "Cric-Lytics\\Controllers\\StatisticsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:17.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Services\\FileService.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Services\\FileService.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Services\\FileService.cs",
+              "RelativeToolTip": "Cric-Lytics\\Services\\FileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:57:00.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MatchHistoryController.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Controllers\\MatchHistoryController.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Controllers\\MatchHistoryController.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Controllers\\MatchHistoryController.cs",
+              "RelativeToolTip": "Cric-Lytics\\Controllers\\MatchHistoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:09.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerService.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Services\\PlayerService.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Services\\PlayerService.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Services\\PlayerService.cs",
+              "RelativeToolTip": "Cric-Lytics\\Services\\PlayerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:20:22.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerDto.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\DTOs\\PlayerDto.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\DTOs\\PlayerDto.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\DTOs\\PlayerDto.cs",
+              "RelativeToolTip": "Cric-Lytics\\DTOs\\PlayerDto.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:24.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Player.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Models\\Player.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Models\\Player.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Models\\Player.cs",
+              "RelativeToolTip": "Cric-Lytics\\Models\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:34.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Models\\User.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Models\\User.cs",
+              "RelativeToolTip": "Cric-Lytics\\Models\\User.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:39.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MatchHistoryService.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Services\\MatchHistoryService.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Services\\MatchHistoryService.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Services\\MatchHistoryService.cs",
+              "RelativeToolTip": "Cric-Lytics\\Services\\MatchHistoryService.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAkwGwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:20:20.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MatchHistory.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Models\\MatchHistory.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\Models\\MatchHistory.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\Models\\MatchHistory.cs",
+              "RelativeToolTip": "Cric-Lytics\\Models\\MatchHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:32.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlayerStatisticsDto.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\DTOs\\PlayerStatisticsDto.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\DTOs\\PlayerStatisticsDto.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\DTOs\\PlayerStatisticsDto.cs",
+              "RelativeToolTip": "Cric-Lytics\\DTOs\\PlayerStatisticsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:27.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MatchHistoryDto.cs",
+              "DocumentMoniker": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\DTOs\\MatchHistoryDto.cs",
+              "RelativeDocumentMoniker": "Cric-Lytics\\DTOs\\MatchHistoryDto.cs",
+              "ToolTip": "E:\\ASP.Net\\Cric-Lytics\\Cric-Lytics\\DTOs\\MatchHistoryDto.cs",
+              "RelativeToolTip": "Cric-Lytics\\DTOs\\MatchHistoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:19:21.551Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
