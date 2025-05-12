@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./pages/header";
 import Home from "./pages/home";
@@ -9,7 +8,12 @@ import Contacts from "./pages/contacts";
 import Sponsorship_data from "./pages/sponsorship_data";
 import Add_socialmedia from "./pages/add_socialmedia";
 import OurTeam from "./pages/OurTeam"; 
-import OppositeTeam from "./pages/OppositeTeam"; 
+import OppositeTeam from "./pages/OppositePlayer"; 
+import OurPlayers from "./pages/OurPlayers"; 
+
+
+
+
 
 import { ThemeProvider } from "./pages/ThemeContext"; // ✅ IMPORT HERE
 
@@ -34,6 +38,8 @@ function App() {
             <Route path="/add_socialmedia" element={<Add_socialmedia />} />
             <Route path="/OurTeam" element={<OurTeam />} />
             <Route path="/OppositeTeam" element={<OppositeTeam />} />
+            <Route path="/OurPlayers" element={<OurPlayers />} />
+
 
           </Routes>
           <Footer />

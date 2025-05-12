@@ -194,28 +194,7 @@ body.dark .image-label {
     background: #6a2c7e;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .row {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-  }
-  
-  .column {
-    flex: 1;
-    display: flex;
-  }
-  
-  .column input {
-    width: 100%;
-    padding: 8px;
-  }
-  
+
   .add-button {
     width: 40px;
     height: 40px;

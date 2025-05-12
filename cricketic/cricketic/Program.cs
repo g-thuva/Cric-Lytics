@@ -6,6 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.PropertyNamingPolicy = null; // Keep original property names
+});
+
 // Enable CORS for React Frontend
 builder.Services.AddCors(options =>
 {

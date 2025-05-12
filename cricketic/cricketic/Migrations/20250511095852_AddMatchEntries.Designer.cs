@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cricketic.Data;
 
@@ -11,9 +12,11 @@ using cricketic.Data;
 namespace cricketic.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250511095852_AddMatchEntries")]
+    partial class AddMatchEntries
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,43 +60,6 @@ namespace cricketic.Migrations
                     b.HasKey("OverPerformanceID");
 
                     b.ToTable("BowlingOverPerformances");
-                });
-
-            modelBuilder.Entity("FinalWebapi.Models.BowlingOverPerformance1", b =>
-                {
-                    b.Property<int>("OverPerformanceID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OverPerformanceID"));
-
-                    b.Property<int>("ExtrasInOver")
-                        .HasColumnType("int");
-
-                    b.Property<string>("MatchCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OverNumber")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PlayerID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PlayerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RunsInOver")
-                        .HasColumnType("int");
-
-                    b.Property<string>("WicketBalls")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("OverPerformanceID");
-
-                    b.ToTable("BowlingOverPerformances1");
                 });
 
             modelBuilder.Entity("FinalWebapi.Models.PlayerPerformance", b =>
@@ -161,73 +127,6 @@ namespace cricketic.Migrations
                     b.HasKey("PerformanceID");
 
                     b.ToTable("PlayerPerformances");
-                });
-
-            modelBuilder.Entity("FinalWebapi.Models.PlayerPerformance1", b =>
-                {
-                    b.Property<int>("PerformanceID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PerformanceID"));
-
-                    b.Property<int>("BallsFaced")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BattingPosition")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Bowler")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Fielder1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Fielder2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Fours")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsOut")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("MatchCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OutMethod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OutOverBall")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PlayerID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PlayerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Record")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Runs")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Sixes")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TotalBall")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TotalWicket")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PerformanceID");
-
-                    b.ToTable("PlayerPerformances1");
                 });
 
             modelBuilder.Entity("MatchDetails", b =>

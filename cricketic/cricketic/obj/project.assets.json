@@ -5168,11 +5168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abans\\Desktop\\cricketic\\cricketic\\cricketic.csproj",
+      "projectUniqueName": "D:\\sof.project\\Cric-Lytics\\cricketic\\cricketic\\cricketic.csproj",
       "projectName": "cricketic",
-      "projectPath": "C:\\Users\\abans\\Desktop\\cricketic\\cricketic\\cricketic.csproj",
+      "projectPath": "D:\\sof.project\\Cric-Lytics\\cricketic\\cricketic\\cricketic.csproj",
       "packagesPath": "C:\\Users\\abans\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abans\\Desktop\\cricketic\\cricketic\\obj\\",
+      "outputPath": "D:\\sof.project\\Cric-Lytics\\cricketic\\cricketic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
