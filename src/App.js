@@ -12,9 +12,6 @@ import OppositeTeam from "./pages/OppositePlayer";
 import OurPlayers from "./pages/OurPlayers"; 
 
 
-
-
-
 import { ThemeProvider } from "./pages/ThemeContext"; // ✅ IMPORT HERE
 
 import "./css/style.css"; 
