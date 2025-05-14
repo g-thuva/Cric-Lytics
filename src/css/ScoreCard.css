@@ -31,7 +31,7 @@
 
 .scorecard1,
 .scorecard2 {
-  max-width: 500px;
+  max-width: 550px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
@@ -114,7 +114,8 @@ h3 {
   text-align: left;
   border-left: none !important;
   border-right: none !important;
-
+  color: #0c0c0c;
+  font-size: 15px;
   height: 40px;
 }
 
@@ -188,4 +189,34 @@ h3 {
 
 .notification-box.show {
   bottom: 20px; /* Slide up */
+}
+
+.scorecard-result {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+  font-family: sans-serif;
+}
+
+.match-header {
+  text-align: center;
+}
+
+.match-header h2 {
+  margin-top: 50px;
+  margin-bottom: 16px;
+  color: #f7f7f8;
+  font-size: 24px;
+  border-bottom: 2px solid #3498db;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.match-header p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #34495e;
 }

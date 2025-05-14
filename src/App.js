@@ -57,7 +57,7 @@ function App() {
 
             <Route path="/OppositeTeam/:matchCode" element={<OppositeTeam />} />
             <Route path="/match-history" element={<MatchHistory />} />
-            <Route path="/scorecard/:matchId" element={<ScoreCard />} />
+            <Route path="/scorecard/:matchCode" element={<ScoreCard />} />
             <Route path="/upcoming-matches" element={<UpcomingMatches />} />
             <Route path="/addnews-form" element={<AddNews />} />
             <Route path="/medical-form" element={<MedicalForm />} />
@@ -65,6 +65,7 @@ function App() {
             <Route path="/all-notification" element={<AllNotification />} />
             <Route path="/our-players/:matchCode" element={<OurPlayers />} />
             <Route path="/our-players" element={<OurPlayers />} />
+
             <Route
               path="/medical-details/:id"
               element={<ViewMedicalDetails />}

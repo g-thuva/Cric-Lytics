@@ -202,7 +202,7 @@ const MedicalNotification = () => {
 
   return (
     <div className="admin-page">
-      <h2>Notifications</h2>
+      <h2>Medical Notifications</h2>
 
       <div className="controls">
         <input

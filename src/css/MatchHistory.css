@@ -1,7 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"); /*import font*/
 
 /* this is orginal*/
-.matchhistory-container,
+/*.matchhistory-container {
+  margin: auto;
+  background: linear-gradient(
+    360deg,
+    rgb(245, 255, 245) 0%,
+    rgb(40, 44, 160) 100%
+  );
+  background-size: cover;
+
+  padding: 100px 50px 80px 50px;
+  width: 100vw;
+
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}*/
+
 .upcoming-matches-container {
   margin: auto;
   background: linear-gradient(
@@ -21,8 +37,13 @@
 
 h1 {
   text-align: center;
-  color: #ffffff;
+  color: #010008cb;
   margin-bottom: 30px;
+}
+
+.control-groups {
+  display: flex;
+  justify-content: center; /* or 'flex-start' */
 }
 
 .controls-container {
@@ -33,15 +54,17 @@ h1 {
   flex-wrap: wrap;
   gap: 15px;
   color: #ffffff;
+  width: 100%;
+  margin: 20px 0;
 }
 
 .search-container {
+  margin-left: 10px;
   align-items: center;
   position: relative;
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
-  flex-grow: 1; /* Allow search container to grow and take available space */
+  width: 1300px;
 }
 
 /* Search Icon */
@@ -50,7 +73,7 @@ h1 {
   left: 20px;
   top: 15px;
   z-index: 1;
-  color: #ffffff;
+  color: #080808;
   font-size: 17px;
   pointer-events: none; /* Prevent icon from being clickable */
 }
@@ -62,8 +85,8 @@ h1 {
   border-radius: 13px;
   border-width: 1.4px;
   font-size: 15px;
-  background-color: #f3f3f534;
-  color: white;
+  background-color: #0c032434;
+  color: #ffffff;
 }
 
 .search-input {
@@ -75,7 +98,7 @@ h1 {
 }
 
 .search-input::placeholder {
-  color: white !important;
+  color: rgb(97, 102, 150) !important;
   opacity: 1 !important;
 }
 
@@ -85,7 +108,7 @@ h1 {
 .search-input:focus,
 .type-filter:focus {
   background-color: #ffffff3f;
-  color: #ffffff;
+  color: #0c0000;
 }
 
 .search-input:focus {
@@ -113,9 +136,10 @@ h1 {
 .btn-container {
   display: flex;
   align-items: center;
-  gap: 0px;
+  gap: 5px;
   flex-wrap: wrap;
   margin-left: auto;
+  justify-content: flex-end;
 }
 .controls-group {
   /*no need*/
@@ -130,16 +154,16 @@ h1 {
   background-image: linear-gradient(to right, #565aa2, #042179);
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 25px;
   padding: 10px 15px 13px;
   height: 50px;
   font-weight: bold;
   width: 180px;
   margin-bottom: 30px;
-  margin-top: 20px;
-  margin-right: 30px;
-  justify-content: right !important;
-  margin-left: auto;
+  margin-top: 60px;
+  margin-right: 5px;
+  justify-content: left !important;
+
   transition: all 0.3s ease-in-out;
   font-size: 15px;
 }

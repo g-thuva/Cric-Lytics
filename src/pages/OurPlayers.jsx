@@ -257,7 +257,7 @@ const OurPlayers = () => {
   const [selected, setSelected] = useState("");
   const [battingPosition, setBattingPosition] = useState();
   const [outStatus, setOutStatus] = useState();
-  const [outType, setOutType] = useState();
+  const [outMethod, setOutMethod] = useState(null);
   const [players, setPlayers] = useState([]);
   const [matchCode, setMatchCode] = useState(""); // to persist matchCode across players
 
@@ -284,19 +284,22 @@ const OurPlayers = () => {
     e.preventDefault();
     const form = e.target;
 
+    const currentOutMethod = outMethod;
+    const currentOutStatus = outStatus;
+
     const playerData = {
       matchCode: form.matchcode.value,
       playerId: e.target.playerId.value,
       playerName: form.playerName.value,
       runs: form.runs.value || null,
-      sixers: form.sixes.value || null,
+      sixes: form.sixes.value || null,
       fours: form.fours.value || null,
       totalWicket: form.totalWicket.value || null,
       totalBall: form.totalBall.value || null,
       ballsFaced: form.ballsFaced.value || null,
-      isOut: outStatus,
+      isOut: currentOutStatus,
       battingPosition: battingPosition,
-      outType: outType,
+      outMethod: currentOutMethod || null,
       outOverBall: form.outOverBall?.value || null,
       bowler: form.bowler?.value || null,
       fielder1: form.fielder1?.value || null,
@@ -311,7 +314,7 @@ const OurPlayers = () => {
     form.reset();
     setBattingPosition();
     setOutStatus();
-    setOutType();
+    setOutMethod();
 
     setBowlingOvers([
       { overNumber: "", runsInOver: "", extrasInOver: "", wicketBalls: "" },
@@ -332,6 +335,8 @@ const OurPlayers = () => {
       // Clear the players and matchCode state after submission
       setPlayers([]);
       setMatchCode("");
+      setOutStatus();
+      setOutMethod();
     } catch (error) {
       alert("Error submitting all players");
       console.error(error);
@@ -419,9 +424,12 @@ const OurPlayers = () => {
                   type="radio"
                   id="notOut"
                   name="outStatus"
-                  value={false}
+                  value="false"
                   checked={outStatus === false}
-                  onChange={() => setOutStatus(false)}
+                  onChange={() => {
+                    setOutStatus(false);
+                    setOutMethod(null); // Clear outType when not out
+                  }}
                   required
                 />
                 <label htmlFor="notOut">Not Out</label>
@@ -440,6 +448,7 @@ const OurPlayers = () => {
               {outStatus === true && (
                 <>
                   <fieldset className="radio-group">
+                    <legend>Out Type</legend>
                     {[
                       "caught",
                       "runOut",
@@ -454,8 +463,8 @@ const OurPlayers = () => {
                           id={type}
                           name="outType"
                           value={type}
-                          checked={outType === type}
-                          onChange={() => setOutType(type)}
+                          checked={outMethod === type}
+                          onChange={(e) => setOutMethod(e.target.value)}
                         />
                         <label htmlFor={type}>{type}</label>
                       </React.Fragment>

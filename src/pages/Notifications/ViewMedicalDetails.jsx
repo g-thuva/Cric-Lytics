@@ -7,7 +7,7 @@ const ViewMedicalDetails = () => {
   const { submission } = state;
 
   const handleDownload = () => {
-    const pdfUrl = `https://localhost:7115/api/MedicalForm/download/${submission.id}`;
+    const pdfUrl = `http://localhost:5121/api/MedicalForm/download/${submission.id}`;
     window.open(pdfUrl, "_blank");
   };
 
@@ -18,7 +18,7 @@ const ViewMedicalDetails = () => {
   const handleAddToCRT = async () => {
     try {
       await axios.post(
-        `https://localhost:7115/api/MedicalForm/addToCrt/${submission.id}`
+        `http://localhost:5121/api/MedicalForm/addToCrt/${submission.id}`
       );
       alert("Added to CRT successfully!");
     } catch (error) {
@@ -29,7 +29,7 @@ const ViewMedicalDetails = () => {
   const handleReject = async () => {
     try {
       await axios.post(
-        `https://localhost:7115/api/MedicalForm/reject/${submission.id}`
+        `https://localhost:5121/api/MedicalForm/reject/${submission.id}`
       );
       alert("Submission rejected.");
     } catch (error) {

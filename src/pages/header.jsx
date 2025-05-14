@@ -8,16 +8,19 @@ function Header() {
   return (
     <header className="header">
       <nav className="nav container flex">
-        <a href="/" className="logo-content flex">
-          <img
-            src={logo1}
-            alt="Logo"
-            style={{ width: "135px", height: "50px" }}
-          />
-        </a>
-
         <div className="menu-content">
           <ul className="menu-list flex">
+            <li>
+              {" "}
+              <a href="/" className="logo-content flex">
+                <img
+                  src={logo1}
+                  alt="Logo"
+                  style={{ width: "135px", height: "50px" }}
+                />
+              </a>
+            </li>
+
             <li>
               <a href="/#home" className="nav-link active-navlink">
                 Home
@@ -60,12 +63,6 @@ function Header() {
             </li>
 
             <li>
-              <a href="/all-notification" className="nav-link">
-                Notification
-              </a>
-            </li>
-
-            <li>
               <button
                 onClick={() => setDarkMode((prev) => !prev)}
                 className="theme-toggle"
@@ -95,7 +92,6 @@ function Header() {
 
           <i className="bx bx-x navClose-btn"></i>
         </div>
-
         <div className="contact-content flex">
           <a href="/profile">
             <div className="profile-container">
@@ -114,11 +110,14 @@ function Header() {
                   11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
                 />
               </svg>
-              <div className="notification"></div>
+
+              <a href="/all-notification" className="notification">
+                <i className="bx bxs-bell"></i>
+                <span className="notification-count"></span>
+              </a>
             </div>
           </a>
         </div>
-
         <i className="bx bx-menu navOpen-btn"></i>
       </nav>
     </header>
